@@ -2,7 +2,9 @@ package _04_lop_doi_tuong_trong_java.bai_tap.phuong_trinh_bac_hai;
 import java.util.Scanner;
 public class XayDungLopGiaiPhuongTrinhBacHai {
 
-    public double a, b, c;
+    public double a;
+    public double b;
+    public double c;
 
     public XayDungLopGiaiPhuongTrinhBacHai(double a, double b, double c) {
         this.a = a;
