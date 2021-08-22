@@ -3,9 +3,9 @@ package bai_lam_them_fix_bug;
 public class Student {
     private static String school = "Codegym";
     private String name;
-    private  int AGE;
+    private int AGE;
 
-   Student() {
+    public Student() {
 
     }
 
@@ -39,7 +39,7 @@ public class Student {
     }
 
     @Override
-    public  String toString() {
+    public String toString() {
         return "Student{" +
                 "name='" + name + '\'' +
                 ", AGE=" + AGE +

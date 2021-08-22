@@ -27,9 +27,27 @@ public class StudentManager {
         }
     }
 
+    public static void delete() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("nhập tên");
+        String namedelete = scanner.nextLine();
+        for (int i = 0; i < 100; i++) {
+            if (studentList[i].getName().equals(namedelete)) {
+                for (int j = 0; j < 99; j++) {
+                    studentList[j]=studentList[j+1];
+                }
+                break;
+            }
+        }
+
+    }
+
     public static void display() {
         for (int i = 0; i < studentList.length - 1; i++) {
-            System.out.println(studentList[i].toString());
+            if (studentList[i] != null) {
+                System.out.println(studentList[i].toString());
+            }
+
         }
     }
 }
