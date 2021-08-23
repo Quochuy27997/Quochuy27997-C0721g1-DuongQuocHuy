@@ -4,10 +4,12 @@ public class Student {
     private static String school = "Codegym";
     private String name;
     private int AGE;
+    private Adress adress;
 
     public Student() {
 
     }
+
 
     public static String getSchool() {
         return school;
@@ -36,13 +38,21 @@ public class Student {
     public Student(String name, int AGE) {
         this.name = name;
         this.AGE = AGE;
+
+    }
+
+    public Student(String name, int AGE, Adress adress) {
+        this.name = name;
+        this.AGE = AGE;
+        this.adress = adress;
     }
 
     @Override
     public String toString() {
         return "Student{" +
-                "name='" + name + '\'' +
-                ", AGE=" + AGE +
+                "name='" + getName() + '\'' +
+                ", AGE=" + getAGE() +
+                ",adress="+adress+
                 '}';
     }
 }

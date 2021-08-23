@@ -6,9 +6,9 @@ public class StudentManager {
     public static Student[] studentList = new Student[100];
 
     static {
-        studentList[0] = new Student("chanh", 18);
-        studentList[1] = new Student("chanh1", 19);
-        studentList[2] = new Student("chanh2", 20);
+        studentList[0] = new Student("chanh", 18,null);
+        studentList[1] = new Student("chanh1", 19,null);
+        studentList[2] = new Student("chanh2", 20,null);
 
     }
 
@@ -18,7 +18,12 @@ public class StudentManager {
         String name = scanner.nextLine();
         System.out.println("nhập  tuổi");
         int age = Integer.parseInt(scanner.nextLine());
-        Student student = new Student(name, age);
+        System.out.println("nhập dia chi");
+        String houseNumber = scanner.nextLine();
+        System.out.println("nhập  tuổi");
+        int age = Integer.parseInt(scanner.nextLine());
+
+        Student student = new Student(name, age,null);
         for (int i = 0; i < studentList.length; i++) {
             if (studentList[i] == null) {
                 studentList[i] = student;
@@ -41,6 +46,7 @@ public class StudentManager {
         }
 
     }
+
 
     public static void display() {
         for (int i = 0; i < studentList.length - 1; i++) {
