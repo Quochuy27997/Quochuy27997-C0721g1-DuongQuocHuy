@@ -10,6 +10,9 @@ public class Student {
 
     }
 
+    public Student(String name, int age, String[] adress) {
+    }
+
 
     public static String getSchool() {
         return school;
@@ -47,12 +50,20 @@ public class Student {
         this.adress = adress;
     }
 
-    @Override
+    public Adress getAdress() {
+        return adress;
+    }
+
+    public void setAdress(Adress adress) {
+        this.adress = adress;
+    }
+
+//    @Override
     public String toString() {
         return "Student{" +
                 "name='" + getName() + '\'' +
                 ", AGE=" + getAGE() +
-                ",adress="+adress+
+                ",adress="+getAdress()+
                 '}';
     }
 }

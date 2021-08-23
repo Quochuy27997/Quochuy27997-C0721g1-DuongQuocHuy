@@ -54,4 +54,13 @@ public class Adress {
         this.district = district;
         this.province = province;
     }
+    public String gadressToSring(){
+        return "{"+
+                "so nha"+getHouseNumber()+
+                "duong"+getStress()+
+                "phuong"+getWard()+
+                "quan"+getDistrict()+
+                "tp"+getProvince();
+
+    }
 }

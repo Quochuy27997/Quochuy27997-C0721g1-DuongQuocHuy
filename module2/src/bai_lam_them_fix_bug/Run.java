@@ -7,7 +7,7 @@ public class Run {
         while (true) {
             System.out.println("Chọn chức năng\n" +
                     "1.Add\n" +
-                    "2.show\n" +
+                    "2.delete\n" +
                     "3.show\n" +
                     "4.Exit");
             System.out.println("Chọn");

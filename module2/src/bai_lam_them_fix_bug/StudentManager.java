@@ -6,13 +6,15 @@ public class StudentManager {
     public static Student[] studentList = new Student[100];
 
     static {
-        studentList[0] = new Student("chanh", 18,null);
-        studentList[1] = new Student("chanh1", 19,null);
-        studentList[2] = new Student("chanh2", 20,null);
+        studentList[0] = new Student("chanh", 18, (Adress) null);
+        studentList[1] = new Student("chanh1", 19, (Adress) null);
+        studentList[2] = new Student("chanh2", 20, (Adress) null);
 
     }
 
     public static void add() {
+
+
         Scanner scanner = new Scanner(System.in);
         System.out.println("nhập tên");
         String name = scanner.nextLine();
@@ -20,10 +22,22 @@ public class StudentManager {
         int age = Integer.parseInt(scanner.nextLine());
         System.out.println("nhập dia chi");
         String houseNumber = scanner.nextLine();
-        System.out.println("nhập  tuổi");
-        int age = Integer.parseInt(scanner.nextLine());
+        System.out.println("nhập duong");
+        String stress = scanner.nextLine();
+        System.out.println("nhập phuong");
+        String ward = scanner.nextLine();
+        System.out.println("nhập quan");
+        String district = scanner.nextLine();
+        System.out.println("nhập tp");
+        String province = scanner.nextLine();
+        String[] adress = new String[5];
+        adress[0]=houseNumber;
+        adress[1]=stress;
+        adress[2]=ward;
+        adress[3]=district;
+        adress[4]=province;
 
-        Student student = new Student(name, age,null);
+        Student student = new Student(name, age,adress);
         for (int i = 0; i < studentList.length; i++) {
             if (studentList[i] == null) {
                 studentList[i] = student;
