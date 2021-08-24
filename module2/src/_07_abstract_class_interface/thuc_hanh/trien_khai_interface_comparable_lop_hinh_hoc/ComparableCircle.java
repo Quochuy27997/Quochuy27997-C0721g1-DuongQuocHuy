@@ -1,0 +1,2 @@
+package _07_abstract_class_interface.thuc_hanh.trien_khai_interface_comparable_lop_hinh_hoc;public class ComparableCircle {
+}
