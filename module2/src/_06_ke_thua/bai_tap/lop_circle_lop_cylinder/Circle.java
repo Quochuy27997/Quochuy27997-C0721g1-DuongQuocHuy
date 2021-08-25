@@ -13,6 +13,12 @@ public class Circle {
         this.color=color;
     }
 
+    public Circle(double v) {
+    }
+
+    public Circle(double v, String indigo, boolean b) {
+    }
+
     public double getRadius() {
         return radius;
     }

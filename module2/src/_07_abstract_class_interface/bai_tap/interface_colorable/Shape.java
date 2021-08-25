@@ -1,11 +1,9 @@
-package _07_abstract_class_interface.bai_tap.trien_khai_interface_resizeable_cho_cac_lop_hinh_hoc.model;
+package _07_abstract_class_interface.bai_tap.interface_colorable;
 
-public class Shape  {
-    private String color = "green";
-    private boolean filled = true;
-
-    public Shape() {
-    }
+public class Shape {
+    private String color="blue";
+    private boolean filled=true;
+    public Shape(){}
 
     public Shape(String color, boolean filled) {
         this.color = color;
@@ -27,15 +25,11 @@ public class Shape  {
     public void setFilled(boolean filled) {
         this.filled = filled;
     }
-
     @Override
-    public String toString() {
-        return "A Shape with color of "
-                + getColor()
-                + " and "
-                + (isFilled() ? "filled" : "not filled");
+    public String toString(){
+        return "A shape with color of"+
+                getColor()+
+                " and " +
+                (isFilled() ? "filled" : "not filled");
     }
-
-
-
 }

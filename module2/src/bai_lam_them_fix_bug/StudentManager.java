@@ -30,14 +30,8 @@ public class StudentManager {
         String district = scanner.nextLine();
         System.out.println("nhập tp");
         String province = scanner.nextLine();
-        String[] adress = new String[5];
-        adress[0]=houseNumber;
-        adress[1]=stress;
-        adress[2]=ward;
-        adress[3]=district;
-        adress[4]=province;
-
-        Student student = new Student(name, age,adress);
+        Adress adress = new Adress(houseNumber, stress, ward, district, province);
+        Student student = new Student(name, age, adress);
         for (int i = 0; i < studentList.length; i++) {
             if (studentList[i] == null) {
                 studentList[i] = student;
@@ -53,7 +47,7 @@ public class StudentManager {
         for (int i = 0; i < 100; i++) {
             if (studentList[i].getName().equals(namedelete)) {
                 for (int j = 0; j < 99; j++) {
-                    studentList[j]=studentList[j+1];
+                    studentList[j] = studentList[j + 1];
                 }
                 break;
             }

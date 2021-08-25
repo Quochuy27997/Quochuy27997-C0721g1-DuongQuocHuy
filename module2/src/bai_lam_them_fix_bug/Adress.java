@@ -1,13 +1,18 @@
 package bai_lam_them_fix_bug;
 
 public class Adress {
-    private String houseNumber;
-    private String stress;
-    private String ward;
-    private String district;
-    private String province;
+    private static String houseNumber;
+    private static String stress;
+    private static String ward;
+    private static String district;
+    private static String province;
+//    private String houseNumber;
+//    private String stress;
+//    private String ward;
+//    private String district;
+//    private String province;
 
-    public String getHouseNumber() {
+    public static String getHouseNumber() {
         return houseNumber;
     }
 
@@ -15,7 +20,7 @@ public class Adress {
         this.houseNumber = houseNumber;
     }
 
-    public String getStress() {
+    public static String getStress() {
         return stress;
     }
 
@@ -23,7 +28,7 @@ public class Adress {
         this.stress = stress;
     }
 
-    public String getWard() {
+    public static String getWard() {
         return ward;
     }
 
@@ -31,7 +36,7 @@ public class Adress {
         this.ward = ward;
     }
 
-    public String getDistrict() {
+    public static String getDistrict() {
         return district;
     }
 
@@ -39,7 +44,7 @@ public class Adress {
         this.district = district;
     }
 
-    public String getProvince() {
+    public static String getProvince() {
         return province;
     }
 
@@ -54,7 +59,7 @@ public class Adress {
         this.district = district;
         this.province = province;
     }
-    public String gadressToSring(){
+    public String adressToSring(){
         return "{"+
                 "so nha"+getHouseNumber()+
                 "duong"+getStress()+

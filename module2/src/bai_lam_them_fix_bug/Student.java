@@ -50,8 +50,14 @@ public class Student {
         this.adress = adress;
     }
 
-    public Adress getAdress() {
-        return adress;
+
+    public String getAdress() {
+        return "{"+
+                "so nha"+ Adress.getHouseNumber()+
+                "duong"+Adress.getStress()+
+                "phuong"+Adress.getWard()+
+                "quan"+Adress.getDistrict()+
+                "tp"+Adress.getProvince();
     }
 
     public void setAdress(Adress adress) {
