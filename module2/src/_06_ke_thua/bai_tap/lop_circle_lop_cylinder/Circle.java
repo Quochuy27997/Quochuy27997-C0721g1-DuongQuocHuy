@@ -37,8 +37,8 @@ public class Circle {
     public double getArea(){
         return radius*radius*Math.PI;
     }
-//    @Override
-    public String circleToString(){
+    @Override
+    public String toString(){
         return "A Circle with radius="
                 +getRadius()
                 +", color:"

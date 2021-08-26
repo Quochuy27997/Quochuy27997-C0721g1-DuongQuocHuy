@@ -6,8 +6,6 @@ public class Cylinder extends Circle {
     public Cylinder() {
     }
 
-    ;
-
     public Cylinder(double height) {
         this.height = height;
     }
@@ -30,12 +28,12 @@ public class Cylinder extends Circle {
     }
 
     @Override
-    public String circleToString() {
+    public String toString() {
         return "A cylinder with" +
-                super.circleToString()
+                super.toString()
                 + ", height="
                 + getHeight()
-                +", has Volume "
+                + ", has Volume "
                 + getVolume();
     }
 }
