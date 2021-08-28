@@ -46,4 +46,8 @@ public class Circle {
                 +", Area="
                 +getArea();
     }
+
+    public String circleToString() {
+        return null;
+    }
 }
