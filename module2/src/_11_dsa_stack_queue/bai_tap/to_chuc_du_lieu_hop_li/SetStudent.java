@@ -7,11 +7,11 @@ public class SetStudent {
     static List<Student> setStudents = new ArrayList<>();
 
     static {
-        Student student1 = new Student("Huy", "Nam", 24);
-        Student student2 = new Student("Nhật", "Nam", 23);
-        Student student3 = new Student("Lan", "Nữ", 20);
-        Student student4 = new Student("Hiền", "Nữ", 26);
-        Student student5 = new Student("Tiến", "Nam", 27);
+        Student student1 = new Student("Huy", "male", 24);
+        Student student2 = new Student("Nhat", "male", 23);
+        Student student3 = new Student("Lan", "female", 20);
+        Student student4 = new Student("Hien", "female", 26);
+        Student student5 = new Student("Tien", "male", 27);
 
         students.add(student1);
         students.add(student2);
@@ -27,20 +27,21 @@ public class SetStudent {
     }
 
     public static void setDisplay() {
-        Queue<Student> nu = new LinkedList();
-        Queue<Student> nam = new LinkedList();
+        Queue<Student> female = new LinkedList();
+
+        Queue<Student> male = new LinkedList();
         for (int i = 0; i < students.size(); i++) {
-            if (students.get(i).getGender().equals("Nữ")) {
-                nu.add(students.get(i));
+            if (students.get(i).getGender().equals("female")) {
+                female.add(students.get(i));
             } else {
-                nam.add(students.get(i));
+                male.add(students.get(i));
             }
         }
-        while (!nu.isEmpty()) {
-            setStudents.add(nu.remove());
+        while (!female.isEmpty()) {
+            setStudents.add(female.remove());
         }
-        while (!nam.isEmpty()) {
-            setStudents.add(nam.remove());
+        while (!male.isEmpty()) {
+            setStudents.add(male.remove());
         }
         for (int i = 0; i < setStudents.size(); i++) {
             System.out.println(i + 1 + "." + setStudents.get(i));
