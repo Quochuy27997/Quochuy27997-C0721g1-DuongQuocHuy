@@ -15,7 +15,7 @@ public class CopyFile {
                     throw new FileNotFoundException();
                 }
                 BufferedReader bufferedReader =new BufferedReader(new FileReader(file));
-                String line ="";
+                String line ="";//doc tung dong
                 while((line=bufferedReader.readLine())!=null){
                    string+=line;
                 }
