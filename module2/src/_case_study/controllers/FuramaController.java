@@ -1,12 +1,18 @@
 package _case_study.controllers;
 
+import _case_study.models.Employee;
+import _case_study.services.EmployeeService;
+import _case_study.services.impl.EmployeeServiceImpl;
+
 import java.util.Scanner;
 
 public class FuramaController {
+    static EmployeeService employeeService=new EmployeeServiceImpl();
     public static void main(String[] args) {
         displayMainMenu();
     }
     public static void displayMainMenu() {
+        final String PATH_EMPLOYEE="src/_case_study/data/employee.csv";
         Scanner input = new Scanner(System.in);
         int choice = -1;
         boolean check = true;
@@ -32,13 +38,13 @@ public class FuramaController {
                         choice = Integer.parseInt(input.nextLine());
                         switch (choice) {
                             case 1:
-//                                .display(); phuong thuc hien
+                                employeeService.display(PATH_EMPLOYEE);
                                 break;
                             case 2:
-//                                .add(); phuong thuc them
+                              employeeService.add(PATH_EMPLOYEE);
                                 break;
                             case 3:
-//                                .edit(); phuong thuc sua
+                            employeeService.edit(PATH_EMPLOYEE);
                                 break;
 
                         }
