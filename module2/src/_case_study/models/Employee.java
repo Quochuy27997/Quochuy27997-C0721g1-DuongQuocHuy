@@ -58,10 +58,10 @@ public class Employee extends Person{
                 ", level='" + level + '\'' +
                 ", position='" + position + '\'' +
                 ", salary=" + salary +
-                '}';
+                '}'+super.toString();
     }
 
     public String getString() {
-        return super.getString()+","+ this.getEmployeeCode()+","+this.getLevel()+","+this.getPosition()+","+this.getSalary();
+        return super.getString()+","+ this.employeeCode+","+this.level+","+this.position+","+this.salary;
     }
 }

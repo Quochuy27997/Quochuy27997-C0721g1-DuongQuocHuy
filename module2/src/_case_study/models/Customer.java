@@ -35,4 +35,7 @@ public class Customer extends Person{
                 ", customerType='" + customerType + '\'' +
                 '}'+super.toString();
     }
+    public String getString() {
+        return super.getString()+","+ this.customerCode+","+this.customerType;
+    }
 }

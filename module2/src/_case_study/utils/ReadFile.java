@@ -26,7 +26,7 @@ public class ReadFile {
         return stringList;
     }
     public static List<Employee> getListEmployee(String path){
-        List<String> stringList = ReadCSVToString("src/_case_study/models/Employee.java");
+        List<String> stringList = ReadCSVToString(path);
         List<Employee> employeeList = new ArrayList<>();
         for (int i = 0; i < stringList.size(); i++) {
             String[] array = stringList.get(i).split(",");

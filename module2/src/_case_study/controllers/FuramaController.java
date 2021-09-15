@@ -1,18 +1,23 @@
 package _case_study.controllers;
 
 import _case_study.models.Employee;
+import _case_study.services.CustomerService;
 import _case_study.services.EmployeeService;
+import _case_study.services.impl.CustomerServiceImpl;
 import _case_study.services.impl.EmployeeServiceImpl;
 
 import java.util.Scanner;
 
 public class FuramaController {
     static EmployeeService employeeService=new EmployeeServiceImpl();
+    static CustomerService customerService=new CustomerServiceImpl();
+    final static String PATH_EMPLOYEE="src//_case_study//data//employee.csv";
+    final static String PATH_CUSTOMER="src//_case_study//data//customer.csv";
     public static void main(String[] args) {
         displayMainMenu();
     }
     public static void displayMainMenu() {
-        final String PATH_EMPLOYEE="src/_case_study/data/employee.csv";
+
         Scanner input = new Scanner(System.in);
         int choice = -1;
         boolean check = true;
@@ -46,6 +51,8 @@ public class FuramaController {
                             case 3:
                             employeeService.edit(PATH_EMPLOYEE);
                                 break;
+                            case 4:
+                                System.exit(0);
 
                         }
                     }
@@ -61,15 +68,16 @@ public class FuramaController {
                         choice = Integer.parseInt(input.nextLine());
                         switch (choice) {
                             case 1:
-//                                .display(); phuong thuc hien
+                               customerService.display(PATH_CUSTOMER);
                                 break;
                             case 2:
-//                                .add(); phuong thuc them
+                                customerService.add(PATH_CUSTOMER);
                                 break;
                             case 3:
-//                                .edit(); phuong thuc sua
+                                customerService.edit(PATH_CUSTOMER);
                                 break;
-
+                            case 4:
+                                System.exit(0);
                         }
                     }
                     break;

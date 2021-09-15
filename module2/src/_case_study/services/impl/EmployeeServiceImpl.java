@@ -24,7 +24,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public void add(String path) {
-        List<Employee> employeeList = ReadFile.getListEmployee("src/_case_study/data/employee.csv ");
+        List<Employee> employeeList = ReadFile.getListEmployee(path);
         String employeeCode = "";
         boolean flag = true;
         while (flag) {
@@ -68,7 +68,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public void edit(String path) {
-        List<Employee> employeeList = ReadFile.getListEmployee("src/_case_study/data/employee.csv");
+        List<Employee> employeeList = ReadFile.getListEmployee(path);
+        display(path);
         String codeOfEmployee;
         boolean flag = true;
         boolean check = true;
@@ -105,52 +106,52 @@ public class EmployeeServiceImpl implements EmployeeService {
                         case 2:
                             System.out.println("Enter new dateOfBirth of employee:");
                             String dateOfBirth = scanner.nextLine();
-                            employee.setName(dateOfBirth);
+                            employee.setDateOfBirth(dateOfBirth);
                             break;
                         case 3:
                             System.out.println("Enter new gender of employee:");
                             String gender = scanner.nextLine();
-                            employee.setName(gender);
+                            employee.setGender(gender);
                             break;
                         case 4:
                             System.out.println("Enter new idCard of employee:");
                             String idCard = scanner.nextLine();
-                            employee.setName(idCard);
+                            employee.setIdCard(idCard);
                             break;
                         case 5:
                             System.out.println("Enter new phoneNumber of employee:");
                             String phoneNumber = scanner.nextLine();
-                            employee.setName(phoneNumber);
+                            employee.setPhoneNumber(phoneNumber);
                             break;
                         case 6:
                             System.out.println("Enter new email of employee:");
                             String email = scanner.nextLine();
-                            employee.setName(email);
+                            employee.setEmail(email);
                             break;
                         case 7:
                             System.out.println("Enter new address of employee:");
                             String address = scanner.nextLine();
-                            employee.setName(address);
+                            employee.setAddress(address);
                             break;
                         case 8:
                             System.out.println("Enter new code of employee:");
                             String code = scanner.nextLine();
-                            employee.setName(code);
+                            employee.setEmployeeCode(code);
                             break;
                         case 9:
                             System.out.println("Enter new level of employee:");
                             String level = scanner.nextLine();
-                            employee.setName(level);
+                            employee.setLevel(level);
                             break;
                         case 10:
                             System.out.println("Enter new position of employee:");
                             String position = scanner.nextLine();
-                            employee.setName(position);
+                            employee.setPosition(position);
                             break;
                         case 11:
                             System.out.println("Enter new salary of employee:");
-                            String salary = scanner.nextLine();
-                            employee.setName(salary);
+                            int salary = Integer.parseInt(scanner.nextLine()) ;
+                            employee.setSalary(salary);
                             break;
                         default:
                             break;
@@ -162,7 +163,7 @@ public class EmployeeServiceImpl implements EmployeeService {
                     flag = true;
                 }
                 WriteFile.writeEmployeeToCSV(employeeList, path, false);
-                display("src/_case_study/data/employee.csv ");
+                display(path);
             }
         }
     }

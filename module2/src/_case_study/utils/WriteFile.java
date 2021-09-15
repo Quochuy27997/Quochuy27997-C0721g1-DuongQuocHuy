@@ -27,14 +27,14 @@ public class WriteFile {
     public static void writeEmployeeToCSV(List<Employee> employeelist, String path, boolean append){
         List<String> stringList=new ArrayList<>();
         for (Employee employee:employeelist){
-            stringList.add(employee.toString());
+            stringList.add(employee.getString());
         }
         WriteCSV(stringList,path,append);
     }
     public static void writeCustomerToCSV(List<Customer> customerlist, String path, boolean append){
         List<String> stringList=new ArrayList<>();
         for (Customer customer:customerlist){
-            stringList.add(customer.toString());
+            stringList.add(customer.getString());
         }
         WriteCSV(stringList,path,append);
     }
