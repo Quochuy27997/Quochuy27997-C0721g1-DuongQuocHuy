@@ -3,19 +3,25 @@ package _case_study.controllers;
 import _case_study.models.Employee;
 import _case_study.services.CustomerService;
 import _case_study.services.EmployeeService;
+import _case_study.services.FacilityService;
 import _case_study.services.impl.CustomerServiceImpl;
 import _case_study.services.impl.EmployeeServiceImpl;
+import _case_study.services.impl.FacilityServiceImpl;
 
 import java.util.Scanner;
 
 public class FuramaController {
-    static EmployeeService employeeService=new EmployeeServiceImpl();
-    static CustomerService customerService=new CustomerServiceImpl();
-    final static String PATH_EMPLOYEE="src//_case_study//data//employee.csv";
-    final static String PATH_CUSTOMER="src//_case_study//data//customer.csv";
+    static EmployeeService employeeService = new EmployeeServiceImpl();
+    static CustomerService customerService = new CustomerServiceImpl();
+    static FacilityService facilityService = new FacilityServiceImpl();
+    final static String PATH_EMPLOYEE = "src//_case_study//data//employee.csv";
+    final static String PATH_CUSTOMER = "src//_case_study//data//customer.csv";
+    final static String PATH_FACILITY = "";
+
     public static void main(String[] args) {
         displayMainMenu();
     }
+
     public static void displayMainMenu() {
 
         Scanner input = new Scanner(System.in);
@@ -46,10 +52,10 @@ public class FuramaController {
                                 employeeService.display(PATH_EMPLOYEE);
                                 break;
                             case 2:
-                              employeeService.add(PATH_EMPLOYEE);
+                                employeeService.add(PATH_EMPLOYEE);
                                 break;
                             case 3:
-                            employeeService.edit(PATH_EMPLOYEE);
+                                employeeService.edit(PATH_EMPLOYEE);
                                 break;
                             case 4:
                                 System.exit(0);
@@ -68,7 +74,7 @@ public class FuramaController {
                         choice = Integer.parseInt(input.nextLine());
                         switch (choice) {
                             case 1:
-                               customerService.display(PATH_CUSTOMER);
+                                customerService.display(PATH_CUSTOMER);
                                 break;
                             case 2:
                                 customerService.add(PATH_CUSTOMER);
@@ -92,15 +98,16 @@ public class FuramaController {
                         choice = Integer.parseInt(input.nextLine());
                         switch (choice) {
                             case 1:
-//                                .display(); phuong thuc hien
+                                facilityService.display(PATH_FACILITY);
                                 break;
                             case 2:
-//                                .add(); phuong thuc them
+                                facilityService.addFacility();
                                 break;
                             case 3:
-//                                .edit(); phuong thuc sua
+                                facilityService.displayListMaintenance();
                                 break;
-
+                            case 4:
+                                System.exit(0);
                         }
                     }
                     break;

@@ -1,6 +1,6 @@
 package _case_study.models;
 
-public class Villa extends Facility{
+public class Villa extends Facility {
     private String roomStandard;// loai phong
     private double swimmingPoolArea;// dientich ho boi
     private int numberOfFloors; //so tang
@@ -30,20 +30,29 @@ public class Villa extends Facility{
         this.numberOfFloors = numberOfFloors;
     }
 
-    public Villa(String serviceName, double usableArea, double rentalCosts, int maxNumberOfPeople,
+    public Villa(String idService, String serviceName, double usableArea, double rentalCosts, int maxNumberOfPeople,
                  String rentalType, String roomStandard, double swimmingPoolArea, int numberOfFloors) {
-        super(serviceName, usableArea, rentalCosts, maxNumberOfPeople, rentalType);
+        super(idService, serviceName, usableArea, rentalCosts, maxNumberOfPeople, rentalType);
         this.roomStandard = roomStandard;
         this.swimmingPoolArea = swimmingPoolArea;
         this.numberOfFloors = numberOfFloors;
     }
-   @Override
-   public String toString(){
-        return "Villa {"+
-                "roomStandard = "+roomStandard +
-                ", swimmingPoolArea = "+swimmingPoolArea+
-                ", numberOfFloors = "+numberOfFloors+
-                "}"+super.toString();
 
-   }
+    @Override
+    public String toString() {
+        return "Villa {" +
+                "roomStandard = " + roomStandard +
+                ", swimmingPoolArea = " + swimmingPoolArea +
+                ", numberOfFloors = " + numberOfFloors +
+                "}" + super.toString();
+
+    }
+
+    public String getString() {
+        return super.getString() +
+                "," + this.roomStandard +
+                "," + this.swimmingPoolArea +
+                "," + this.numberOfFloors;
+
+    }
 }

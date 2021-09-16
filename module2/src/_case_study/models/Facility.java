@@ -1,13 +1,23 @@
 package _case_study.models;
 
 public class Facility {
+    private String idService;
     private String serviceName; // Tên dịch vụ
     private double usableArea; // Diện tích sử dụng
     private double rentalCosts; // Chi phí thuê
     private int maxNumberOfPeople; // Số lượng người tối đa
     private String rentalType; // Kiểu thuê
 
-    public Facility(String serviceName, double usableArea, double rentalCosts, int maxNumberOfPeople, String rentalType) {
+    public String getIdService() {
+        return idService;
+    }
+
+    public void setIdService(String idService) {
+        this.idService = idService;
+    }
+
+    public Facility(String idService, String serviceName, double usableArea, double rentalCosts, int maxNumberOfPeople, String rentalType) {
+        this.idService = idService;
         this.serviceName = serviceName;
         this.usableArea = usableArea;
         this.rentalCosts = rentalCosts;
@@ -54,14 +64,25 @@ public class Facility {
     public void setRentalType(String rentalType) {
         this.rentalType = rentalType;
     }
+
     @Override
-    public String toString(){
+    public String toString() {
         return "Facility{" +
+                "Idservice='" + idService +
                 "serviceName='" + serviceName +
                 ", usableArea=" + usableArea +
                 ", rentalCosts=" + rentalCosts +
                 ", maxNumberOfPeople=" + maxNumberOfPeople +
                 ", rentalType=" + rentalType +
                 '}';
+    }
+
+    public String getString() {
+        return this.idService +
+                "," + this.serviceName +
+                "," + this.usableArea +
+                "," + this.rentalCosts +
+                "," + this.maxNumberOfPeople +
+                "," + rentalType;
     }
 }

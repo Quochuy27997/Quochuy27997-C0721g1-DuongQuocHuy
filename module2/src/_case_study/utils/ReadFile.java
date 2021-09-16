@@ -4,8 +4,7 @@ import _case_study.models.*;
 import com.sun.org.apache.xerces.internal.xs.StringList;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class ReadFile {
     public static List<String> ReadCSVToString(String path) {
@@ -47,38 +46,39 @@ public class ReadFile {
         }
         return customersList;
     }
-    public static List<House> getListHouse(String path){
+    public static Map<House,Integer> getListHouse(String path){
         List<String> stringList = ReadCSVToString(path);
-        List<House> houseList = new ArrayList<>();
-        for (int i = 0; i < stringList.size(); i++) {
-            String[] array = stringList.get(i).split(",");
-            House house = new House(array[0], Double.parseDouble(array[1]), Double.parseDouble(array[2]),
-                    Integer.parseInt(array[3]), array[4],array[5],Integer.parseInt(array[6]));
-            houseList.add(house);
+        Map<House,Integer> houseIntegerMap = new LinkedHashMap<>();
+        for (String s:stringList) {
+            String[] array = s.split(",");
+            House house = new House(array[0],array[1], Double.parseDouble(array[2]), Double.parseDouble(array[3]),
+                    Integer.parseInt(array[4]), array[5],array[6],Integer.parseInt(array[7]));
+            houseIntegerMap.put(house,Integer.parseInt(array[8]));
         }
-        return houseList;
+        return houseIntegerMap;
     }
-    public static List<Villa> getListVilla(String path){
+    public static Map<Villa,Integer> getListVilla(String path){
         List<String> stringList = ReadCSVToString(path);
-        List<Villa> villaList = new ArrayList<>();
-        for (int i = 0; i < stringList.size(); i++) {
-            String[] array = stringList.get(i).split(",");
-            Villa villa = new Villa(array[0], Double.parseDouble(array[1]), Double.parseDouble(array[2]),
-                    Integer.parseInt(array[3]), array[4],array[5],Double.parseDouble(array[6]),Integer.parseInt(array[7]));
-            villaList.add(villa);
+        Map<Villa,Integer> villaIntegerMap = new LinkedHashMap<>();
+        for (String s:stringList) {
+            String[] array = s.split(",");
+            Villa villa = new Villa(array[0],array[1], Double.parseDouble(array[2]), Double.parseDouble(array[3]),
+                    Integer.parseInt(array[4]), array[5],array[6],Double.parseDouble(array[7]),Integer.parseInt(array[8]));
+            villaIntegerMap.put(villa,Integer.parseInt(array[9]));
         }
-        return villaList;
+        return villaIntegerMap;
     }
-    public static List<Room> getListRoom(String path){
+    public static Map<Room,Integer> getListRoom(String path){
         List<String> stringList = ReadCSVToString(path);
-        List<Room> roomList = new ArrayList<>();
-        for (int i = 0; i < stringList.size(); i++) {
-            String[] array = stringList.get(i).split(",");
-            Room room = new Room(array[0], Double.parseDouble(array[1]), Double.parseDouble(array[2]),
-                    Integer.parseInt(array[3]), array[4],array[5]);
-            roomList.add(room);
+        Map<Room,Integer> roomIntegerMap = new LinkedHashMap<>();
+        for (String s:stringList) {
+            String[] array = s.split(",");
+            Room room = new Room(array[0],array[1], Double.parseDouble(array[2]), Double.parseDouble(array[3]),
+                    Integer.parseInt(array[4]), array[5],array[6]);
+            roomIntegerMap.put(room,Integer.parseInt(array[7]));
         }
-        return roomList;
+        return roomIntegerMap;
     }
+
 
 }
